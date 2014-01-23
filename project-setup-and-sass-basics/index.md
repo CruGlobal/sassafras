@@ -16,7 +16,10 @@ page-class: page--sass-basics
 
 ## The Language
 ###  Nesting
-### Direct  Selectors
-### Pseudo Classes
-### D.R.Y Code
+#### Direct  Selectors
+#### Pseudo Classes
+#### D.R.Y Code
+###Variables
+
+
 
