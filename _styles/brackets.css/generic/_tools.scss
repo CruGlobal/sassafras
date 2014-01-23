@@ -1,0 +1,67 @@
+/*------------------------------------*\
+    $TOOLS
+\*------------------------------------*/
+/**
+ * We will begin by importing functions that will be used in the
+ * framework. There is no need to change any of these functions
+ */
+
+
+$rem-base: 			16px !default;
+
+$magic-number:        $base-line-height;
+$magic-ratio:         $base-line-height / $base-font-size;
+
+@function lower-bound($range){
+  @if length($range) <= 0 {
+    @return 0;
+  }
+  @return nth($range,1);
+}
+
+
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+  @return nth($range, 2);
+}
+
+
+@function strip-units($num) {
+	@return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: $rem-base)  {
+  $value: strip-units($value) / strip-units($base-value) * 1rem;
+  @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+  @return $value;
+}
+
+@function rem-calc($values, $base-value: $rem-base) {
+  $max: length($values);
+
+  @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+  @return $remValues;
+}
+
+
+@function em-calc($values){
+  @return rem-calc($values);
+}
+
+
+@mixin font-size($sizeValue: 16){
+	font-size: strip-units($sizeValue) + px;
+	font-size: strip-units($sizeValue / 16) + rem;
+}
+
+@mixin rem($prop, $sizeValue: 16){
+	#{$prop}: ($sizeValue) + px;
+	#{$prop}: ($sizeValue / 16) + rem;
+}

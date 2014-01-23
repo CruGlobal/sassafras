@@ -1,0 +1,211 @@
+/*------------------------------------*\
+    $HELPER
+\*------------------------------------*/
+/**
+ * A series of helper classes to use arbitrarily. Only use a helper class if an
+ * element/component doesn’t already have a class to which you could apply this
+ * styling, e.g. if you need to float `.main-nav` left then add `float:left;` to
+ * that ruleset as opposed to adding the `.float--left` class to the markup.
+ *
+ * A lot of these classes carry `!important` as you will always want them to win
+ * out over other selectors.
+ */
+
+
+/**
+ * Calculate all padding margin helper mixins
+ */
+@include vertical-calc(1, 12) {}
+
+
+/**
+ * Add/remove floats
+ */
+.float--right   { float:right!important; }
+.float--left    { float:left !important; }
+.float--none    { float:none !important; }
+
+
+/**
+ * Text alignment
+ */
+.text--left     { text-align:left  !important; }
+.text--center   { text-align:center!important; }
+.text--right    { text-align:right !important; }
+
+
+/**
+ * Font weights
+ */
+.weight--light      { font-weight:300!important; }
+.weight--normal     { font-weight:400!important; }
+.weight--semibold   { font-weight:600!important; }
+
+
+/**
+ * Add/remove margins
+ */
+.push           { margin:       $base-line-height!important; }
+.push--top      { margin-top:   $base-line-height!important; }
+.push--right    { margin-right: $base-line-height!important; }
+.push--bottom   { margin-bottom:$base-line-height!important; }
+.push--left     { margin-left:  $base-line-height!important; }
+.push--ends     { margin-top:   $base-line-height!important; margin-bottom:$base-line-height!important; }
+.push--sides    { margin-right: $base-line-height!important; margin-left:  $base-line-height!important; }
+
+.push-half          { margin:       $base-line-height!important; }
+.push-half--top     { margin-top:   $base-line-height!important; }
+.push-half--right   { margin-right: $base-line-height!important; }
+.push-half--bottom  { margin-bottom:$base-line-height!important; }
+.push-half--left    { margin-left:  $base-line-height!important; }
+.push-half--ends    { margin-top:   $base-line-height!important; margin-bottom:$base-line-height!important; }
+.push-half--sides   { margin-right: $base-line-height!important; margin-left:  $base-line-height!important; }
+
+.flush          { margin:       0!important; }
+.flush--top     { margin-top:   0!important; }
+.flush--right   { margin-right: 0!important; }
+.flush--bottom  { margin-bottom:0!important; }
+.flush--left    { margin-left:  0!important; }
+.flush--ends    { margin-top:   0!important; margin-bottom:0!important; }
+.flush--sides   { margin-right: 0!important; margin-left:  0!important; }
+
+/**
+ * Add/remove paddings
+ */
+.soft           { padding:       $base-line-height!important; }
+.soft--top      { padding-top:   $base-line-height!important; }
+.soft--right    { padding-right: $base-line-height!important; }
+.soft--bottom   { padding-bottom:$base-line-height!important; }
+.soft--left     { padding-left:  $base-line-height!important; }
+.soft--ends     { padding-top:   $base-line-height!important; padding-bottom:$base-line-height!important; }
+.soft--sides    { padding-right: $base-line-height!important; padding-left:  $base-line-height!important; }
+
+.soft-half           { padding:        $base-line-height / 2!important; }
+.soft-half--top      { padding-top:    $base-line-height / 2!important; }
+.soft-half--right    { padding-right:  $base-line-height / 2!important; }
+.soft-half--bottom   { padding-bottom: $base-line-height / 2!important; }
+.soft-half--left     { padding-left:   $base-line-height / 2!important; }
+.soft-half--ends     { padding-top:    $base-line-height / 2!important; padding-bottom: $base-line-height / 2!important; }
+.soft-half--sides    { padding-right:  $base-line-height / 2!important; padding-left:   $base-line-height / 2!important; }
+
+.hard           { padding:       0!important; }
+.hard--top      { padding-top:   0!important; }
+.hard--right    { padding-right: 0!important; }
+.hard--bottom   { padding-bottom:0!important; }
+.hard--left     { padding-left:  0!important; }
+.hard--ends     { padding-top:   0!important; padding-bottom:0!important; }
+.hard--sides    { padding-right: 0!important; padding-left:  0!important; }
+
+
+/**
+ * Pull items full width of `.island` parents.
+ */
+.full-bleed{
+    margin-right:-$base-line-height !important;
+    margin-left: -$base-line-height !important;
+
+    .islet &{
+        margin-right:-($base-line-height / 2)!important;
+        margin-left: -($base-line-height / 2)!important;
+    }
+}
+
+
+/**
+ * Add a help cursor to any element that gives the user extra information on
+ * `:hover`.
+ */
+.informative{
+    cursor:help!important;
+}
+
+
+/**
+ * Mute an object by reducing its opacity.
+ */
+.muted{
+    opacity:0.5!important;
+    filter:alpha(opacity = 50)!important;
+}
+
+
+/**
+ * Add a right-angled quote to links that imply movement, e.g.:
+ *
+   <a href=# class=go>Read more</a>
+ *
+ */
+.go:after{
+    content:"\00A0" "\00BB"!important;
+}
+
+
+/**
+ * Apply capital case to an element (usually a `strong`).
+ */
+.caps{
+    text-transform:uppercase!important;
+}
+
+
+/**
+ * Hide content off-screen without resorting to `display:none;`, also provide
+ * breakpoint specific hidden elements.
+ */
+@mixin accessibility{
+    border:0!important;
+    clip:rect(0 0 0 0)!important;
+    height:1px!important;
+    margin:-1px!important;
+    overflow:hidden!important;
+    padding:0!important;
+    position: absolute!important;
+    width:1px!important;
+}
+.accessibility,
+.visuallyhidden{
+    @include accessibility;
+}
+@if $responsive{
+    @each $state in $breakpoints{
+        @include grid-media-query(#{$state}){
+            .accessibility--#{$state},
+            .visuallyhidden--#{$state}{
+                @include accessibility;
+            }
+        }
+    }
+}
+
+
+/**
+ * Content Alignment
+ */
+%center, .centered{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+%center-block, .center-block{
+	@extend %center;
+	
+	width: 100%;
+	text-align: center;
+}
+
+
+
+/**
+ * Attatch peices of content to each other
+ */
+.attached--top{
+	margin-bottom: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.attached--bottom{
+	margin-top: 0;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}

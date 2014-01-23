@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+/* 
+ * Default header styles 
+ */
+h1, h2, h3, h4, h5, h6 {
+	font-family: $header-font-family;
+	font-weight: $header-font-weight;
+	font-style: $header-font-style;
+	text-rendering: $header-text-rendering;
+	
+	small {
+		font-size: $small-font-size;
+	}
+	
+}
+
+/**
+ * Use the %vertical-rhythm class we created in the _shared.scss file to 
+ * set the same rhythm on the heading elements
+ */
+h1, .h1, %h1 {
+    @extend %vertical-rhythm;
+    @include font-size($h1-font-size);
+}
+
+h2, .h2, %h2 {
+    @extend %vertical-rhythm;
+    @include font-size($h2-font-size);
+}
+
+h3, .h3, %h3 {
+    @extend %vertical-rhythm;
+    @include font-size($h3-font-size);
+}
+
+h4, .h4, %h4 {
+    @extend %vertical-rhythm;
+    @include font-size($h4-font-size);
+}
+
+h5, .h5, %h4 {
+    @extend %vertical-rhythm;
+    @include font-size($h5-font-size);
+}
+
+h6, .h6, %h6s {
+    @extend %vertical-rhythm;
+    @include font-size($h6-font-size);
+}
