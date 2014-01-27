@@ -1,0 +1,32 @@
+/**
+ * Font weights
+ */
+.weight--semibold, %weight--semibold { font-weight: 600 !important; }
+
+.weight--normal, %weight--normal     { font-weight: 400 !important; }
+
+
+
+
+/**
+ * Text Transform
+ */
+.uppercase, %uppercase      {text-transform: uppercase !important;}
+
+
+
+.lead--heading{
+	@extend %uppercase;
+	@extend %weight--semibold;
+}
+
+
+.bolded--numbers{
+	& > li{
+		@extend %weight--semibold;
+		
+		& > dl, & > ul, & > ol, p{
+			@extend %weight--normal;
+		}
+	}
+}

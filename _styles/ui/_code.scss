@@ -1,13 +1,19 @@
 pre{
 	z-index: 1;
+
+	overflow: auto;
+	padding: 12px;
+	border: 1px solid #ddd;
+	
+	background-color: #f8f8f8;
+	
 	white-space: pre;
 	word-wrap: normal;
-	background-color: #f8f8f8;
-	border: 1px solid #ddd;
-	overflow: auto;
 	color: #fff;
-	padding: 12px;
+
 	border-radius: 2px;
+	
+	@include double-spacing(margin-bottom);
 	
 	code{
 		color: rgba(0, 0, 0, 0.8);

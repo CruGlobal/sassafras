@@ -83,5 +83,6 @@ hr{
  */
 ul,ol,dd{
 	@extend %vertical-rhythm; 
-	@include double-spacing(margin-left);
+    margin-left: $magic-number * 1.5;
+    margin-left: ($magic-ratio * 1.5) + rem;
 }

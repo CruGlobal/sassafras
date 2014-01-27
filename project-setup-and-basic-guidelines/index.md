@@ -1,18 +1,34 @@
 ---
 layout: default
-title: Sass Basics -- Project Setup, Workflow, Nesting, etc
+title: Project Setup and Basic Guidelines
 page-class: page--project-setup
 ---
-
 <section class="section__block">
-	<header class="section__header">
-		<h2  class="section__title">Project Setup and Basic Guidelines</h2>
+	<header class="page__header">
+		<h1  class="page__title">{{page.title}}</h2>
 	</header>
-	<div class="section__content">
-		<h3  class="section__sub-title">Project Structure</h3>
-		<p>The first thing to understand is that <code>.scss</code> is essentially a subset to the CSS3 syntac. This means that every valid CSS3 stylesheet is a valid <code>.scss</code> as well. These means that you can switch to <code>.scss</code> immediately once you have completed the installation. However, unlike vanilla CSS, Sass is a real scripting language with expressions, functions, variables, conditional logic, and loops. You don’t have to use all of these features to get some benefit out of Sass, but they’re there if you need them. Later we will get into how they will make complex and repetitive CSS much easier to write. </p>
-		<p>Below is an example of the file structure we will be using in our projects. While at first this may seem very complicated, as you get more compfortable with <code>.scss</code> projects you will see that breaking the project up into simple files makes it much easier to maintain. </p>
+<div class="section__content">
+<h2  class="section__title">Project Structure</h3>
+<p>The first thing to understand is that <code>.scss</code> is essentially a subset to the CSS3 syntac. This means that every valid CSS3 stylesheet is a valid <code>.scss</code> as well. These means that you can switch to <code>.scss</code> immediately once you have completed the installation. However, unlike vanilla CSS, Sass is a real scripting language with expressions, functions, variables, conditional logic, and loops. You don’t have to use all of these features to get some benefit out of Sass, but they’re there if you need them. Later we will get into how they will make complex and repetitive CSS much easier to write. </p>
 		
+<p>Here is a simple example of an overall project setup: </p>
+{% highlight scss %}
+my_project/
+|
+|-- index.html
+|
+|-- styles/                # Folder including all Sass files
+|   |-- style.scss         # Primary Sass file
+|   |-- _forms.scss        # Our form styles
+|   |-- _buttons.scss      # Our buttons styles
+|   ...                    # Etc
+|
+|-- style.min.css          # Minified and complied version of our Sass file
+|
+{% endhighlight %}	
+
+<p>Here is an example of what the styles/ directory of our projects will look like. While at first this may seem very complicated, as you get more comfortable with <code>.scss</code> projects you will see that breaking the project up into simple files makes it much easier to maintain. </p>
+
 {% highlight scss %}
 styles/
 |
@@ -101,14 +117,8 @@ styles/
 <p>For further reading I cannot recommend Jonathan Snook’s <a href="http://smacss.com/">SMACSS</a> highly enough. below.</p>
 
 </div>
-</section>
-
-
-<section class="section__block">
-	<header class="section__header">
-		<h2  class="section__title">Methodology</h2>
-	</header>	
-	<div class="section__content">
+<div class="section__content">
+<h2  class="section__title">Methodology</h2>
 <h3  class="section__sub-title">General</h3>
 <p>Limit your stylesheets to a maximum 80 character width where possible. Exceptions may be gradient syntax and URLs in comments. That’s fine, there’s nothing we can do about that.</p>
 <p>I prefer four space size indentation and I write multi-line CSS.</p>
@@ -264,10 +274,5 @@ styles/
 <p>We have several types of room in a house, but they all share similar traits; they all have floors, ceilings, walls and doors. We can share this information in an abstracted <code>.room{}</code> class. However we have specific types of room that are different from the others; a kitchen might have a tiled floor and a bedroom might have carpets, a bathroom might not have a window but a bedroom most likely will, each room likely has different colored walls. OOCSS teaches us to abstract the shared styles out into a base object and then extend this information with more specific classes to add the unique treatment(s).</p>
 <p>So, instead of building dozens of unique components, try and spot repeated design patterns across them all and abstract them out into reusable classes; build these skeletons as base ‘objects’ and then peg classes onto these to extend their styling for more unique circumstances.</p>
 <p>If you have to build a new component split it into structure and skin; build the structure of the component using very generic classes so that we can reuse that construct and then use more specific classes to skin it up and add design treatments.</p>
-
-
 </div>	
 </section>
-
-
-
