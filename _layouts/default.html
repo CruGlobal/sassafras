@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js  js-nav--collapse"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,75 +22,80 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-			<div class="faux-column"></div>
 		<header class="page-header" role="banner">
-			<div class="wrap">
-				<h1 class="site-brand"></h1>
-				<nav class="navigation"  role="navigation">
-					<ul class="nav">
-						<li>
-							<a href="/getting-started/">
-								<small>Lesson 1</small>
-								Getting Sass Installed
-							</a>
-						</li>
-						<li>
-							<a href="/project-setup-and-sass-basics/">
-								<small>Lesson 2</small>
-								Project Setup and Sass Basics
-							</a>
-						</li>
-						<li>
-							<a href="/simple-functions-and-math/">
-								<small>Lesson 3</small>
-								Simple Functions and Math
-							</a>
-						</li>
-						<li>
-							<a href="/simplify-your-life-with-mixins/">
-								<small>Lesson 4</small>								
-								Simplifing your life with @mixins
-							</a>
-						</li>
-						<li>
-							<a href="/reusable-code-with-extends">
-								<small>Lesson 5</small>
-								Reusable code with @extends
-							</a>
-						</li>
-						<li>
-							<a href="/creating-custom-functions/">
-								<small>Lesson 6</small>
-								Creating Custom Functions
-							</a>
-						</li>
-						<li>
-							<a href="/code-performance/">
-								<small>Lesson 7</small>
-								Code Performance
-							</a>
-						</li>
-						<li>
-							<a href="/code-style-guidelines-and-best-practices/">
-								<small>Lesson 8</small>
-								Code Style Guidelines and Best Practices
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
+			<h1 class="site-brand"></h1>
+			<nav class="navigation"  role="navigation">
+				<ul class="site-nav  nav">
+					<li>
+						<a href="/getting-started/">
+							<small>Lesson 1</small>
+							<span>Getting Sass Installed</span>
+						</a>
+					</li>
+					<li>
+						<a href="/project-setup-and-basic-guidelines/">
+							<small>Lesson 2</small>
+							<span>Project Setup and Basic Guidelines</span>
+						</a>
+					</li>
+					<li>
+						<a href="/sass-basics/">
+							<small>Lesson 3</small>
+							<span>Sass Basics</span>
+						</a>
+					</li>
+					<li>
+						<a href="/simple-functions-and-math/">
+							<small>Lesson 4</small>
+							<span>Simple Functions and Math</span>
+						</a>
+					</li>
+					<li>
+						<a href="/simplify-your-life-with-mixins/">
+							<small>Lesson 5</small>								
+							<span>Simplify your life with @mixins</span>
+						</a>
+					</li>
+					<li>
+						<a href="/reusable-code-with-extends">
+							<small>Lesson 6</small>
+							<span>Reusable code with @extends</span>
+						</a>
+					</li>
+					<li>
+						<a href="/creating-custom-functions/">
+							<small>Lesson 7</small>
+							<span>Creating Custom Functions</span>
+						</a>
+					</li>
+					<li>
+						<a href="/code-performance/">
+							<small>Lesson 8</small>
+							<span>Code Performance</span>
+						</a>
+					</li>
+					<li>
+						<a href="/code-style-guidelines-and-best-practices/">
+							<small>Lesson 9</small>
+							<span>Code Style Guidelines and Best Practices</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</header>
-		
-		
+
+
 		<div class="site-main">
-			<article>
-				{{ content }}
+			<article class="content">
+				<div class="wrap">
+					{{ content }}
+				</div>
 			</article>
 		</div>
 
-
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="{{ site.url }}main.js"></script>
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
