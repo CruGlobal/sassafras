@@ -58,11 +58,10 @@ body .page{
 	
 }
 
-.page__title, .section__content{
+.page__header, .section__content{
 	@include double-spacing(margin-bottom);
-}
+} 
 
 .section__title{
-	//color: #c6538c;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
