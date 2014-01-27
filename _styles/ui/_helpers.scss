@@ -14,6 +14,8 @@
 .uppercase, %uppercase      {text-transform: uppercase !important;}
 
 
+.flush--sides, %flush-sides   { margin-right: 0!important; margin-left:  0!important; }
+
 
 .lead--heading{
 	@extend %uppercase;

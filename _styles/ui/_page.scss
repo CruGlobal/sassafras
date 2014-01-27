@@ -35,7 +35,6 @@ body .page{
 .content{
 	width: auto;
 	
-	margin: 0 20px;
 	margin-top: 40px;
 	padding-left: 12px;
 	padding-right: 12px;
@@ -48,6 +47,9 @@ body .page{
 		margin-top: 0px;
 		margin-left: auto;
 		margin-right: auto;
+		
+		@include spacing(padding-left);
+		@include spacing(padding-right);
 	}
 	@include mq(890px) {
 		max-width: 630px;
@@ -64,4 +66,14 @@ body .page{
 
 .section__title{
 	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+ul, ol, dd{
+	@include mq(740px, max) {
+		@include spacing(margin-left);
+	}
+}
+
+.command-line dd {
+	@extend %flush-sides;
 }
