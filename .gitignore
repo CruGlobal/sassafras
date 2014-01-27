@@ -4,5 +4,4 @@
 *.swp
 *.swo
 
-index.html
-style.min.css
+_site/

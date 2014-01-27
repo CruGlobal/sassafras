@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js  js-nav--collapse"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="/style.min.css">
+
+
+        <script src="assets/scripts/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body  class="page page--project-setup">
+		<div class="preload">
+			<img src="/assets/images/about-image.png"></img>
+		</div>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+		<header class="page-header" role="banner">
+			<h1 class="site-brand"></h1>
+			<nav class="navigation"  role="navigation">
+				<ul class="site-nav  nav">
+					<li>
+						<a href="/getting-started/">
+							<small>Lesson 1</small>
+							<span>Getting Sass Installed</span>
+						</a>
+					</li>
+					<li>
+						<a href="/project-setup-and-basic-guidelines/">
+							<small>Lesson 2</small>
+							<span>Project Setup and Basic Guidelines</span>
+						</a>
+					</li>
+					<li>
+						<a href="/sass-basics/">
+							<small>Lesson 3</small>
+							<span>Sass Basics</span>
+						</a>
+					</li>
+					<li>
+						<a href="/simple-functions-and-math/">
+							<small>Lesson 4</small>
+							<span>Simple Functions and Math</span>
+						</a>
+					</li>
+					<li>
+						<a href="/simplify-your-life-with-mixins/">
+							<small>Lesson 5</small>								
+							<span>Simplify your life with @mixins</span>
+						</a>
+					</li>
+					<li>
+						<a href="/reusable-code-with-extends">
+							<small>Lesson 6</small>
+							<span>Reusable code with @extends</span>
+						</a>
+					</li>
+					<li>
+						<a href="/creating-custom-functions/">
+							<small>Lesson 7</small>
+							<span>Creating Custom Functions</span>
+						</a>
+					</li>
+					<li>
+						<a href="/code-performance/">
+							<small>Lesson 8</small>
+							<span>Code Performance</span>
+						</a>
+					</li>
+					<li>
+						<a href="/code-style-guidelines-and-best-practices/">
+							<small>Lesson 9</small>
+							<span>Code Style Guidelines and Best Practices</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+
+		<div class="site-main">
+			<article class="content">
+				<div class="wrap">
+					<p><section class="section__block">
+    <header class="section__header">
+        <h2  class="section__title">Project Setup and Basic Guidelines</h2>
+    </header>
+    <div class="section__content">
+        <h3  class="section__sub-title">Project Structure</h3>
+        <p>The first thing to understand is that <code>.scss</code> is essentially a subset to the CSS3 syntac. This means that every valid CSS3 stylesheet is a valid <code>.scss</code> as well. These means that you can switch to <code>.scss</code> immediately once you have completed the installation. However, unlike vanilla CSS, Sass is a real scripting language with expressions, functions, variables, conditional logic, and loops. You don’t have to use all of these features to get some benefit out of Sass, but they’re there if you need them. Later we will get into how they will make complex and repetitive CSS much easier to write. </p>
+        <p>Below is an example of the file structure we will be using in our projects. While at first this may seem very complicated, as you get more compfortable with <code>.scss</code> projects you will see that breaking the project up into simple files makes it much easier to maintain. </p></p>
+
+<div class="highlight"><pre><code class="scss"><span class="nt">styles</span><span class="o">/</span>
+<span class="o">|</span>
+<span class="o">|</span><span class="nt">--</span> <span class="nt">framework</span><span class="o">/</span>             <span class="nn">#</span> <span class="nt">Starting</span> <span class="nt">point</span> <span class="nt">for</span> <span class="nt">base</span> <span class="nt">styles</span>
+<span class="o">|</span>   <span class="o">|</span><span class="nt">--</span> <span class="nt">_framework</span><span class="nc">.scss</span>    <span class="nn">#</span> <span class="nt">Include</span> <span class="nt">to</span> <span class="nt">get</span> <span class="nt">access</span> <span class="nt">to</span> <span class="nt">all</span> <span class="nt">modules</span>
+<span class="o">|</span>   <span class="o">|</span><span class="nt">--</span> <span class="nt">_defaults</span><span class="nc">.scss</span>     <span class="nn">#</span> <span class="nt">Default</span> <span class="nt">variables</span> <span class="nt">for</span> <span class="nt">framework</span>
+<span class="o">|</span>   <span class="o">|</span><span class="nt">--</span> <span class="nt">components</span><span class="o">/</span>        <span class="nn">#</span> <span class="nt">Optional</span> <span class="nt">files</span> 
+<span class="o">|</span>       <span class="o">|</span><span class="nt">--</span> <span class="nt">_buttons</span><span class="nc">.scss</span>  <span class="nn">#</span> <span class="nt">Etc</span><span class="nc">...</span>
+<span class="o">|</span>       <span class="nc">...</span>
+<span class="o">|</span>   <span class="o">|</span><span class="nt">--</span> <span class="nt">core</span><span class="o">/</span>              <span class="nn">#</span> <span class="nt">The</span> <span class="nt">base</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">framework</span>
+<span class="o">|</span>       <span class="o">|</span><span class="nt">--</span> <span class="nt">_headings</span><span class="nc">.scss</span> <span class="nn">#</span> <span class="nt">Etc</span><span class="nc">...</span>
+<span class="o">|</span>       <span class="nc">...</span>
+<span class="o">|</span>   <span class="o">|</span><span class="nt">--</span> <span class="nt">generic</span><span class="o">/</span>           <span class="nn">#</span> <span class="nt">Tools</span> <span class="nt">to</span> <span class="nt">use</span> <span class="nt">in</span> <span class="nt">any</span> <span class="nt">project</span>
+<span class="o">|</span>       <span class="o">|</span><span class="nt">--</span> <span class="nt">_mixins</span><span class="nc">.scss</span>   <span class="nn">#</span> <span class="nt">Etc</span><span class="nc">...</span>
+<span class="o">|</span>       <span class="nc">...</span>
+<span class="o">|</span>   <span class="nc">...</span>
+<span class="o">|</span>
+<span class="o">|</span><span class="nt">--</span> <span class="nt">cru</span><span class="o">/</span>                   <span class="nn">#</span> <span class="nt">Cru</span> <span class="nt">Styles</span> <span class="nt">and</span> <span class="nt">Base</span>
+<span class="o">|</span>   <span class="o">|</span><span class="nt">--</span> <span class="nt">_cru</span><span class="nc">.scss</span>          <span class="nn">#</span> <span class="nt">Include</span> <span class="nt">to</span> <span class="nt">get</span> <span class="nt">access</span> <span class="nt">to</span> <span class="nt">all</span> <span class="nt">modules</span>
+<span class="o">|</span>   <span class="o">|</span><span class="nt">--</span> <span class="nt">_cru-colors</span><span class="nc">.sass</span>   <span class="nn">#</span> <span class="nt">Etc</span><span class="nc">...</span>
+<span class="o">|</span>   <span class="o">|</span><span class="nt">--</span> <span class="nt">_cru-buttons</span><span class="nc">.scss</span>  <span class="nn">#</span> <span class="nt">Etc</span><span class="nc">...</span> 
+<span class="o">|</span>   <span class="nc">...</span>
+<span class="o">|</span>
+<span class="o">|</span><span class="nt">--</span> <span class="nt">ui</span><span class="o">/</span>                    <span class="nn">#</span> <span class="nt">Project</span> <span class="nt">Specific</span> <span class="nt">UI</span>
+<span class="o">|</span>   <span class="o">|</span><span class="nt">--</span> <span class="nt">_page</span><span class="nc">.scss</span>         <span class="nn">#</span> <span class="nt">Etc</span><span class="nc">...</span>
+<span class="o">|</span>   <span class="o">|</span><span class="nt">--</span> <span class="nt">_page-header</span><span class="nc">.scss</span>  <span class="nn">#</span> <span class="nt">Etc</span><span class="nc">...</span>
+<span class="o">|</span>   <span class="nc">...</span>
+<span class="o">|</span>
+<span class="err">`</span><span class="nt">--</span> <span class="nt">_vars</span><span class="nc">.scss</span>             <span class="nn">#</span> <span class="nt">project</span> <span class="nt">specific</span> <span class="nt">variables</span>
+<span class="err">`</span><span class="nt">--</span> <span class="nt">main</span><span class="nc">.scss</span>              <span class="nn">#</span> <span class="nt">primary</span> <span class="nt">Sass</span> <span class="nt">file</span>
+</code></pre></div>
+    
+
+
+
+<h3  class="section__sub-title">Partials</h3>   
+<p>In the example above, you can see that the project is broken up into many different small files. While this is not good practice in CSS, due to the way Sass is compiled it is perfectly acceptable.  These files are called partials. Sass will compile each of these files into one large <code>.css</code> file based on the order the files are included. We will go into the ordering a little bit later.</p>
+        
+<p>Partials are to be included in their main parent folder. This means that the framework files will be imported into a <code>_framework.scss</code>, the cru files into a <code>_cru.scss</code> file, etc. We will then include these once more into the <code>_main.scss</code>. This allows for increased portability and ease of including the framework or cru files into any project.</p>
+        
+<p>The example below shows what our <code>main.scss</code> file will look like</p>
+        
+
+<div class="highlight"><pre><code class="scss"><span class="cm">/**</span>
+<span class="cm"> * Files to be included based on precident:</span>
+<span class="cm"> *</span>
+<span class="cm"> * Frameworks get included first, then project files</span>
+<span class="cm"> */</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Project Variables</span>
+<span class="cm"> */</span>
+<span class="k">@import</span> <span class="s2">&quot;vars&quot;</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Framework and Cru Styles</span>
+<span class="cm"> */</span>
+<span class="k">@import</span> <span class="s2">&quot;framework/framework&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;cru/cru&quot;</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Project Files</span>
+<span class="cm"> */</span>
+<span class="k">@import</span> <span class="s2">&quot;ui/page&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;ui/page-header&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;ui/page-nav&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;ui/page-footer&quot;</span><span class="p">;</span>
+
+<span class="cm">/* Overrides at the bottom */</span>
+<span class="k">@import</span> <span class="s2">&quot;ui/utilities&quot;</span><span class="p">;</span>
+ <span class="nc">...</span> 
+</code></pre></div>
+
+        
+<h3  class="section__sub-title">Source Order</h3>
+        
+<p>The example above demonstrated that the partials and projects should be imported in a specific order. A well ordered stylesheet will be ordered something like this:</p>
+<ol>
+    <li>Reset – ground zero.</li>
+    <li>Elements – unclassed h1, unclassed ul etc.</li>
+    <li>Objects and abstractions — generic, underlying design patterns.</li>
+    <li>Components – full components constructed from objects and their extensions.</li>
+    <li>Style trumps – error states etc.</li>
+</ol>
+            
+<p>This means that—as you go down the document—each section builds upon and inherits sensibly from the previous one(s). There should be less undoing of styles, less specificity problems and all-round better architected stylesheets.</p>
+        
+<p>For further reading I cannot recommend Jonathan Snook’s <a href="http://smacss.com/">SMACSS</a> highly enough. below.</p>
+
+</div>
+
+<p></section></p>
+
+<p><section class="section__block">
+    <header class="section__header">
+        <h2  class="section__title">Methodology</h2>
+    </header><br>
+    <div class="section__content">
+<h3  class="section__sub-title">General</h3>
+<p>Limit your stylesheets to a maximum 80 character width where possible. Exceptions may be gradient syntax and URLs in comments. That’s fine, there’s nothing we can do about that.</p>
+<p>I prefer four space size indentation and I write multi-line CSS.</p>
+<h3  class="section__sub-title">Table of Contents</h3>
+<p>At the top of stylesheets, a table of contents will detail the sections contained in the document, for example:</p></p>
+
+<div class="highlight"><pre><code class="scss"><span class="cm">/*------------------------------------*\</span>
+<span class="cm">    $CONTENTS</span>
+<span class="cm">\*------------------------------------*/</span>
+<span class="cm">/**</span>
+<span class="cm"> * CONTENTS............It&#39;s what you are reading</span>
+<span class="cm"> * DEFAULTS............Project variables and settings</span>
+<span class="cm"> * MIXINS..............Tools for our project</span>
+<span class="cm"> * RESET...............Set our reset defaults</span>
+<span class="cm"> */</span>
+</code></pre></div>
+
+<p>This will tell the next developer(s) exactly what they can expect to find in this file. Each item in the table of contents maps directly to a section title.</p>
+<p>Since we will be working across multiple files then each item in the table of contents will map to an include which pulls that section in.</p>
+        
+<h3  class="section__sub-title">Section Titles</h3>
+<p>The table of contents would be of no use unless it had corresponding section titles. Denote a section thus:</p>
+
+
+<div class="highlight"><pre><code class="scss"><span class="cm">/*------------------------------------*\</span>
+<span class="cm">    $RESET</span>
+<span class="cm">\*------------------------------------*/</span>
+</code></pre></div>
+
+
+<p>The <code>$</code> prefixing the name of the section allows us to run a find ([Cmd|Ctrl]+F) for $[SECTION-NAME] and limit our search scope to section titles only.</p>
+
+<h3  class="section__sub-title">More on Partials</h3>
+<p>Some people prefer to work with large, single files.This is fine, and by sticking to the following guidelines you’ll encounter no problems. For our purposes however, we will be breaking ours up into small files making it easier to maintain and work in collaboration.</p>
+
+<h3  class="section__sub-title">Comments</h3>
+<p>For the sake of uniformity, I propose a docBlock-eque commenting style which will be limited to 80 characters in length:</p>
+
+
+<div class="highlight"><pre><code class="scss"><span class="cm">/**</span>
+<span class="cm">    * This is a docBlock style comment</span>
+<span class="cm">    *</span>
+<span class="cm">    * This is a longer description of the comment, describing the code in</span>
+<span class="cm">    * detail. We limit these lines to a maximum of 80 characters in length.</span>
+<span class="cm">    *</span>
+<span class="cm">    * We can have markup in the comments, and should be encouraged to do so.</span>
+<span class="cm">    *</span>
+<span class="cm">    *</span>
+<span class="cm">    */</span>      
+</code></pre></div>
+
+        
+<h3  class="section__sub-title">Code Structure</h3>
+<h4>Anatomy</h4>
+<p>We will be following a number of standards when structuring rulesets.</p>
+    <ul>
+        <li>Use hyphen delimited class names (except for BEM notation, see below)</li>
+        <li>4 space indented</li>
+        <li>Multi-line</li>
+        <li>Declarations in relevance (NOT alphabetical) order</li>
+        <li>Indent vendor prefixed declarations so that their values are aligned</li>
+        <li>Indent our rulesets to mirror the DOM</li>
+    </ul>
+<p>A brief example:</p>
+            
+
+<div class="highlight"><pre><code class="scss"><span class="nc">.widget</span><span class="p">{</span>
+   <span class="cm">/* Positioning */</span>
+   <span class="na">position</span><span class="o">:</span> <span class="no">absolute</span><span class="p">;</span>
+   <span class="na">z-index</span><span class="o">:</span> <span class="mi">10</span><span class="p">;</span>
+   <span class="na">top</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="cm">/* Display &amp; Box Model */</span>
+   <span class="na">display</span><span class="o">:</span> <span class="no">inline</span><span class="o">-</span><span class="no">block</span><span class="p">;</span>
+   <span class="na">overflow</span><span class="o">:</span> <span class="no">hidden</span><span class="p">;</span>
+   <span class="na">width</span><span class="o">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+   <span class="na">border</span><span class="o">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="no">solid</span> <span class="mh">#333</span><span class="p">;</span>
+   <span class="na">margin</span><span class="o">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+
+   <span class="cm">/* Color */</span>
+   <span class="na">background</span><span class="o">:</span> <span class="mh">#000</span><span class="p">;</span>
+   <span class="na">color</span><span class="o">:</span> <span class="mh">#fff</span><span class="p">;</span>
+
+   <span class="cm">/* Text */</span>
+   <span class="na">font-family</span><span class="o">:</span> <span class="no">sans-serif</span><span class="p">;</span>
+   <span class="na">font-size</span><span class="o">:</span> <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+
+   <span class="cm">/* Others */</span>
+   <span class="na">cursor</span><span class="o">:</span> <span class="no">pointer</span><span class="p">;</span>
+   <span class="na">-webkit-border-radius</span><span class="o">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+      <span class="na">-moz-border-radius</span><span class="o">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+           <span class="na">border-radius</span><span class="o">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+
+<span class="p">}</span>
+    <span class="nc">.widget-heading</span><span class="p">{</span>
+        <span class="na">margin-right</span><span class="o">:</span> <span class="mi">-10</span><span class="kt">px</span><span class="p">;</span>
+        <span class="na">margin-left</span><span class="o">:</span> <span class="mi">-10</span><span class="kt">px</span><span class="p">;</span>
+        <span class="na">padding</span><span class="o">:</span> <span class="mi">0</span><span class="mf">.25</span><span class="kt">em</span><span class="p">;</span>
+        
+        <span class="na">font-size</span><span class="o">:</span> <span class="mi">1</span><span class="mf">.5</span><span class="kt">rem</span><span class="p">;</span>
+        <span class="na">line-height</span><span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+            
+<p>We can see that .widget-heading must be a child of .widget as we have indented the .widget-heading ruleset one level deeper than .widget. This is useful information to developers that can now be gleaned just by a glance at the indentation of our rulesets.</p>
+<p>One exception to the multi-line rule might be in cases of the following:</p>         
+
+
+<div class="highlight"><pre><code class="scss"><span class="nc">.t10</span>    <span class="p">{</span> <span class="na">width</span><span class="o">:</span><span class="mi">10</span><span class="kt">%</span> <span class="p">}</span>
+<span class="nc">.t20</span>    <span class="p">{</span> <span class="na">width</span><span class="o">:</span><span class="mi">20</span><span class="kt">%</span> <span class="p">}</span>
+<span class="nc">.t25</span>    <span class="p">{</span> <span class="na">width</span><span class="o">:</span><span class="mi">25</span><span class="kt">%</span> <span class="p">}</span>       <span class="cm">/* 1/4 */</span>
+<span class="nc">.t30</span>    <span class="p">{</span> <span class="na">width</span><span class="o">:</span><span class="mi">30</span><span class="kt">%</span> <span class="p">}</span>
+</code></pre></div>
+
+            
+<h4>Naming Conventions</h4>
+<p>For the most part I recommend simply use hyphen delimited classes (e.g. .widget-heading, not .widget_heading or .widgetHeading), however in certain circumstances we should use BEM (Block, Element, Modifier) notation.</p>
+
+<p>BEM is a methodology for naming and classifying CSS selectors in a way to make them a lot more strict, transparent and informative.</p>
+
+<p>The naming convention follows this pattern:</p>
+            
+
+<div class="highlight"><pre><code class="scss"><span class="nc">.block</span><span class="p">{}</span>
+<span class="nc">.block__element</span><span class="p">{}</span>
+<span class="nc">.block--modifier</span><span class="p">{}</span>
+</code></pre></div>
+
+<ul>
+    <li><code>.block</code> represents the higher level of an abstraction or component.</li>
+    <li><code>.block__element</code> represents a descendent of .block that helps form .block as a whole.</li>
+    <li><code>.block--modifier</code> represents a different state or version of .block.</li>
+</ul>
+<p>An analogy of how BEM classes work might be:</p>
+
+
+<div class="highlight"><pre><code class="scss"><span class="nc">.person</span><span class="p">{}</span>
+<span class="nc">.person--woman</span><span class="p">{}</span>
+    <span class="nc">.person__hand</span><span class="p">{}</span>
+    <span class="nc">.person__hand--left</span><span class="p">{}</span>
+    <span class="nc">.person__hand--right</span><span class="p">{}</span>
+</code></pre></div>
+
+<p>BEM looks a little uglier, and is a lot more verbose, but it grants us a lot of power in that we can glean the functions and relationships of elements from their classes alone. Also, BEM syntax will typically compress (gzip) very well as compression favors/works well with repetition.</p>
+<p>Regardless of whether we need to use BEM or not, always ensure classes are sensibly named; keep them as short as possible but as long as necessary. Ensure any objects or abstractions are very vaguely named (e.g. .ui-list, .media) to allow for greater reuse. Extensions of objects should be much more explicitly named (e.g. .user-avatar-link). Don’t worry about the amount or length of classes; gzip will compress well written code incredibly well.</p>    
+
+<h4>OOCSS</h4>
+<p>I work in an OOCSS manner; I split components into structure (objects) and skin (extensions). As an analogy (note, not example) take the following:</p>
+
+
+<div class="highlight"><pre><code class="scss"><span class="nc">.room</span><span class="p">{}</span>
+
+<span class="nc">.room--kitchen</span><span class="p">{}</span>
+<span class="nc">.room--bedroom</span><span class="p">{}</span>
+<span class="nc">.room--bathroom</span><span class="p">{}</span>
+</code></pre></div>
+
+
+<p>We have several types of room in a house, but they all share similar traits; they all have floors, ceilings, walls and doors. We can share this information in an abstracted <code>.room{}</code> class. However we have specific types of room that are different from the others; a kitchen might have a tiled floor and a bedroom might have carpets, a bathroom might not have a window but a bedroom most likely will, each room likely has different colored walls. OOCSS teaches us to abstract the shared styles out into a base object and then extend this information with more specific classes to add the unique treatment(s).</p>
+<p>So, instead of building dozens of unique components, try and spot repeated design patterns across them all and abstract them out into reusable classes; build these skeletons as base ‘objects’ and then peg classes onto these to extend their styling for more unique circumstances.</p>
+<p>If you have to build a new component split it into structure and skin; build the structure of the component using very generic classes so that we can reuse that construct and then use more specific classes to skin it up and add design treatments.</p>
+
+
+</div>  
+
+<p></section></p>
+
+				</div>
+			</article>
+		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
