@@ -8,6 +8,17 @@ body .page{
 	height: 100%;
 }
 
+
+.outer-wrap{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+.inner-wrap{
+	position: relative;
+	width: 100%;
+}
+
 .site-main{
 	position: relative;
 	top: 30px;
