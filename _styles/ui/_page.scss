@@ -63,15 +63,15 @@ body .page{
 }
 
 ul, ol, dd{
-	@include mq(740px) {
+	@include mq(740px, max) {
 		@include spacing(margin-left);	}
 	} 
 
 dl > dd{
 	@include mq(740px, max)  {
-		%flush--sides   { margin-right: 0!important; margin-left:  0!important; }
+		%flush--left    { margin-left:  0!important; }
 		
-		@extend %flush--sides;
+		@extend %flush--left ;
 	}
 }
 
