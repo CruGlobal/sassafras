@@ -69,9 +69,8 @@ ul, ol, dd{
 
 dl > dd{
 	@include mq(740px, max)  {
-		%flush--left    { margin-left:  0!important; }
+
+		margin-left:  0;
 		
-		@extend %flush--left ;
 	}
 }
-
