@@ -61,3 +61,15 @@ body .page{
 .section__title{
 	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
+
+ul, ol, dd{
+	@include mq(740px, max) {
+		@include spacing(margin-left);	}
+	} 
+
+dl > dd{
+	@include mq(740px, max)  {
+		margin-left:  0;
+		
+	}
+}
