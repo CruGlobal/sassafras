@@ -10,13 +10,14 @@ body .page{
 
 .site-main{
 	position: relative;
-	top: 74px;
+	top: 30px;
 	z-index: 1;
 	
 	width: auto;
 	padding-bottom: 100px;
 	
 	@include mq(740px) {
+		top: 74px;
 		margin-left: 260px;
 	}
 	/*
