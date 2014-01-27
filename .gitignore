@@ -3,5 +3,10 @@
 .sass-cache/
 *.swp
 *.swo
+<<<<<<< HEAD
 _site/
 _site
+=======
+
+_site/
+>>>>>>> 45ff4e76f18b8781a4cccc018615a5d1f0904142
