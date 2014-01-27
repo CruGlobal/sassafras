@@ -3,6 +3,7 @@
 .sass-cache/
 *.swp
 *.swo
+_site
 
 index.html
 style.min.css
