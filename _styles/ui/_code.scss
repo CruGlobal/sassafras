@@ -1,19 +1,15 @@
 pre{
 	white-space: pre;
 	word-wrap: normal;
-	background-color: #36363d;
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
 	overflow: auto;
 	color: #fff;
 	padding: 12px;
 	border-radius: 2px;
-	-webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25) inset;
-	-moz-box-shadow: 0 0 15px rgba(0,0,0,0.25) inset;
-	-ms-box-shadow: 0 0 15px rgba(0,0,0,0.25) inset;
-	-o-box-shadow: 0 0 15px rgba(0,0,0,0.25) inset;
-	box-shadow: 0 0 15px rgba(0,0,0,0.25) inset;
 	
 	code{
-		color: #fff;
+		color: rgba(0, 0, 0, 0.8);
 	}
 }
 
@@ -22,20 +18,15 @@ code{
 }
 
 .cm{
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(0, 0, 0, 0.4);
 }
 
 .k, .na{
-	color: #9c6;
+	color: #008800;
 }
 
 .sb, .sc, .sd, .s2, .no, .nd{
 	color: #e74c3c;
-}
-
-.na{
-	
-	
 }
 
 .mi, .kt, .mh, .mf{
