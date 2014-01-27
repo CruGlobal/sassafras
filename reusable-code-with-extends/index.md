@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Reusble Code with @Extends
+title: Reusble Code with @extends
 page-class: page--extends
 ---
 <header class="page__header">
