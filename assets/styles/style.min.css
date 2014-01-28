@@ -1,37 +1,25 @@
 /*
-Syntax error: File to import not found or unreadable: ui/js-classes.
-              Load path: /Users/jamesdempsey/Sites/sassafras
-        on line 8 of _styles/style.scss
+Syntax error: Invalid CSS after "...ort 'ui/fonts';": expected selector or at-rule, was "<<<<<<< HEAD"
+        on line 10 of _styles/style.scss
 
-3: @import 'brackets.css/brackets';
-4: @import 'ui/page';
-5: @import 'ui/site-nav';
-6: @import 'ui/code';
-7: 
-8: @import 'ui/js-classes';
-9: @import 'ui/helpers';
+5: @import 'ui/page';
+6: @import 'ui/site-nav';
+7: @import 'ui/code';
+8: @import 'ui/fonts';
+9: 
+10: <<<<<<< HEAD
+11: =======
+12: 
+13: >>>>>>> dev
+14: @import 'ui/js-classes';
+15: @import 'ui/helpers';
 
 Backtrace:
-_styles/style.scss:8
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/import_node.rb:45:in `import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:217:in `visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/root_node.rb:20:in `render'
+_styles/style.scss:10
+/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/scss/parser.rb:1146:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/scss/parser.rb:1084:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/scss/parser.rb:28:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/engine.rb:342:in `_to_tree'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/engine.rb:315:in `_render'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/engine.rb:262:in `render'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.12/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
@@ -50,4 +38,4 @@ _styles/style.scss:8
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: ui/js-classes.\A               Load path: /Users/jamesdempsey/Sites/sassafras\A         on line 8 of _styles/style.scss\A \A 3: @import 'brackets.css/brackets';\A 4: @import 'ui/page';\A 5: @import 'ui/site-nav';\A 6: @import 'ui/code';\A 7: \A 8: @import 'ui/js-classes';\A 9: @import 'ui/helpers';"; }
+  content: "Syntax error: Invalid CSS after \"...ort 'ui/fonts';\": expected selector or at-rule, was \"<<<<<<< HEAD\"\A         on line 10 of _styles/style.scss\A \A 5: @import 'ui/page';\A 6: @import 'ui/site-nav';\A 7: @import 'ui/code';\A 8: @import 'ui/fonts';\A 9: \A 10: <<<<<<< HEAD\A 11: =======\A 12: \A 13: >>>>>>> dev\A 14: @import 'ui/js-classes';\A 15: @import 'ui/helpers';"; }

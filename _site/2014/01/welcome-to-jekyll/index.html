@@ -19,65 +19,76 @@
 		<div class="preload">
 			<img src="$logo-path"></img>
 		</div>
-		<div class="outer-wrap">
-			<div class="inner-wrap">
-		        <!--[if lt IE 7]>
-		            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-		        <![endif]-->
-				<header class="page-header" role="banner">
-					<h1 class="site-brand">
-					</h1>
-					<nav class="navigation"  role="navigation">
-						<ul class="site-nav  nav">
-							<li>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+			<div  id="outer-wrap" class="outer-wrap">
+				<div  id="inner-wrap" class="inner-wrap">
+					<header class="page-header" role="banner">
+						<h1 class="site-brand"></h1>
+						<a class="open-btn" id="nav-open-btn" href="#nav" alt="Open Navigation">
+							<i class="icon-nav"></i>
+						</a>
+					</header>
+					<nav  id="nav" class="navigation"  role="navigation">
+						<ul class="site-nav">
+							<a href="#inner-wrap"  class="close-btn"  id="nav-close-btn"  alt="Close Navigation">
+							<i class="icon-close"></i>
+							</a>
+							<li  class="site-nav__installation">
 								<a href="http://0.0.0.0:4000/getting-started/">
 									<small>Lesson 1</small>
 									<span>Getting Sass Installed</span>
 								</a>
 							</li>
-							<li>
+							<li  class="site-nav__project-setup">
 								<a href="http://0.0.0.0:4000/project-setup-and-basic-guidelines/">
 									<small>Lesson 2</small>
 									<span>Project Setup and Basic Guidelines</span>
 								</a>
 							</li>
-							<li>
+
+							<li class="site-nav__sass-basics">
 								<a href="http://0.0.0.0:4000/sass-basics/">
 									<small>Lesson 3</small>
 									<span>Sass Basics</span>
 								</a>
 							</li>
-							<li>
+
+							<li  class="site-nav__simple-functions">
 								<a href="http://0.0.0.0:4000/simple-functions-and-math/">
 									<small>Lesson 4</small>
 									<span>Simple Functions and Math</span>
 								</a>
 							</li>
-							<li>
+							<li  class="site-nav__mixins">
 								<a href="http://0.0.0.0:4000/simplify-your-life-with-mixins/">
 									<small>Lesson 5</small>								
 									<span>Simplify your life with @mixins</span>
 								</a>
 							</li>
-							<li>
+							<li  class="site-nav__extends">
 								<a href="http://0.0.0.0:4000/reusable-code-with-extends">
 									<small>Lesson 6</small>
 									<span>Reusable code with @extends</span>
 								</a>
 							</li>
-							<li>
+
+							<li  class="site-nav__custom-functions">
 								<a href="http://0.0.0.0:4000/creating-custom-functions/">
 									<small>Lesson 7</small>
 									<span>Creating Custom Functions</span>
 								</a>
 							</li>
-							<li>
+
+							<li  class="site-nav__performance">
 								<a href="http://0.0.0.0:4000/code-performance/">
 									<small>Lesson 8</small>
 									<span>Code Performance</span>
 								</a>
 							</li>
-							<li>
+
+							<li  class="site-nav__code-guidelines">
 								<a href="http://0.0.0.0:4000/code-style-guidelines-and-best-practices/">
 									<small>Lesson 9</small>
 									<span>Code Style Guidelines and Best Practices</span>
@@ -85,11 +96,11 @@
 							</li>
 						</ul>
 					</nav>
-				</header>
 
-				<div class="site-main">
-					<article class="content">
-						<h2>Welcome to Jekyll!</h2>
+
+					<div class="site-main">
+						<article class="content">
+							<h2>Welcome to Jekyll!</h2>
 <p class="meta">23 Jan 2014</p>
 
 <div class="post">
@@ -109,14 +120,13 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
 
 </div>
 
-					</article>
+						</article>
+					</div>
+					
 				</div>
-				
 			</div>
-		</div>
-
 		<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-        <!--<script src="main.js"></script>-->
+        <script src="/assets/scripts/main.js"></script>-
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
