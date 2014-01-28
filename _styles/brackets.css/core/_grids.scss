@@ -124,20 +124,17 @@ $use-silent-classes: false;
      */
     #{$class-type}grid__item{
 		
-       // display:inline-block;           /* [1] */
-	    float: left;
-        padding-left:$gutter;           /* [2] */
-        vertical-align:top;             /* [3] */
+        display:inline-block;                    /* [1] */
+	    //float: left;
+        vertical-align:top;                      /* [3] */
 		
-		@include spacing(padding-left);
-		@include spacing(padding-right);
+		@include spacing(padding-left);          /* [2] */
 		
         @if $mobile-first == true{
-            width:100%;                 /* [4] */
+            width:100%;                          /* [4] */
         }
-        -webkit-box-sizing:border-box;  /* [5] */
-           -moz-box-sizing:border-box;  /* [5] */
-                box-sizing:border-box;  /* [5] */
+		@include vendor(box-sizing, border-box); /* [5] */
+		
         @if $use-markup-fix != true{
             letter-spacing:normal;
             word-spacing:normal;

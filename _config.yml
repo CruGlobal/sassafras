@@ -1,7 +1,11 @@
 name: Sassafras
-myurl: localhost/sassafras
+
+#root: http://0.0.0.0:4000
+root: http://cruweb.github.io/sassafras
+
 markdown: redcarpet
 pygments: true
 permalink: /:year/:month/:title
 paginate: 1
 paginate_path: "/page:num"
+myurl: cruweb.github.io/sassafras

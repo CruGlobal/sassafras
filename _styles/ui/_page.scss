@@ -8,6 +8,17 @@ body .page{
 	height: 100%;
 }
 
+.outer-wrap{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+	.inner-wrap {
+		position: relative;
+		width: 100%;
+	}
+
 .site-main{
 	position: relative;
 	top: 30px;
@@ -17,8 +28,9 @@ body .page{
 	padding-bottom: 100px;
 	
 	@include mq(740px) {
-		top: 74px;
-		margin-left: 260px;
+		top: 0;
+		@include rem-calc(margin-left, 260px);
+		@include rem-calc(margin-top, 40px);
 	}
 	/*
 	@include mq(740px) { 
@@ -33,27 +45,47 @@ body .page{
 
 
 .content{
-	width: auto;
+	width: 430px;
+	max-width: 90%;
 	
-	margin: 0 20px;
-	margin-top: 40px;
-	padding-left: 12px;
-	padding-right: 12px;
+	margin-left: auto;
+	margin-right: auto;
+	@include rem-calc(margin-top, 40px);
 	
 	@include mq(740px) {
 		position: relative;
-		
-		max-width: 470px;
-		
+				
 		margin-top: 0px;
-		margin-left: auto;
-		margin-right: auto;
 	}
 	@include mq(890px) {
-		max-width: 630px;
+		width: 580px;
 	}
 	@include mq(1160px) {
-		max-width: 800px;
+		width: 660px;
 	}
 	
+}
+
+.page__header, .section__content{
+	@include double-spacing(margin-bottom);
+} 
+
+.section__title{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+ul, ol, dd{
+	@include mq(740px, max) {
+		@include spacing(margin-left);	}
+	} 
+
+dl > dd{
+	@include mq(740px, max)  {
+		margin-left:  0;
+		
+	}
+}
+
+.close-btn{
+	display: block;
 }
