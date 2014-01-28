@@ -8,6 +8,17 @@ body .page{
 	height: 100%;
 }
 
+.outer-wrap{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+	.inner-wrap {
+		position: relative;
+		width: 100%;
+	}
+
 .site-main{
 	position: relative;
 	top: 30px;
@@ -17,8 +28,9 @@ body .page{
 	padding-bottom: 100px;
 	
 	@include mq(740px) {
-		top: 74px;
-		margin-left: 260px;
+		top: 0;
+		@include rem-calc(margin-left, 260px);
+		@include rem-calc(margin-top, 40px);
 	}
 	/*
 	@include mq(740px) { 
@@ -38,7 +50,7 @@ body .page{
 	
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 40px;
+	@include rem-calc(margin-top, 40px);
 	
 	@include mq(740px) {
 		position: relative;
@@ -72,4 +84,8 @@ dl > dd{
 		margin-left:  0;
 		
 	}
+}
+
+.close-btn{
+	display: block;
 }

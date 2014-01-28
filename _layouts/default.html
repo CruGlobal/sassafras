@@ -22,77 +22,86 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-		<header class="page-header" role="banner">
-			<h1 class="site-brand">
-			</h1>
-			<nav class="navigation"  role="navigation">
-				<ul class="site-nav  nav">
-					<li>
-						<a href="{{site.root}}/getting-started/">
-							<small>Lesson 1</small>
-							<span>Getting Sass Installed</span>
+			<div  id="outer-wrap" class="outer-wrap">
+				<div  id="inner-wrap" class="inner-wrap">
+					<header class="page-header" role="banner">
+						<h1 class="site-brand"></h1>
+						<a class="open-btn" id="nav-open-btn" href="#nav" alt="Open Navigation">
+							<i class="icon-nav"></i>
 						</a>
-					</li>
-					<li>
-						<a href="{{site.root}}/project-setup-and-basic-guidelines/">
-							<small>Lesson 2</small>
-							<span>Project Setup and Basic Guidelines</span>
-						</a>
-					</li>
-					<li>
-						<a href="{{site.root}}/sass-basics/">
-							<small>Lesson 3</small>
-							<span>Sass Basics</span>
-						</a>
-					</li>
-					<li>
-						<a href="{{site.root}}/simple-functions-and-math/">
-							<small>Lesson 4</small>
-							<span>Simple Functions and Math</span>
-						</a>
-					</li>
-					<li>
-						<a href="{{site.root}}/simplify-your-life-with-mixins/">
-							<small>Lesson 5</small>								
-							<span>Simplify your life with @mixins</span>
-						</a>
-					</li>
-					<li>
-						<a href="{{site.root}}/reusable-code-with-extends">
-							<small>Lesson 6</small>
-							<span>Reusable code with @extends</span>
-						</a>
-					</li>
-					<li>
-						<a href="{{site.root}}/creating-custom-functions/">
-							<small>Lesson 7</small>
-							<span>Creating Custom Functions</span>
-						</a>
-					</li>
-					<li>
-						<a href="{{site.root}}/code-performance/">
-							<small>Lesson 8</small>
-							<span>Code Performance</span>
-						</a>
-					</li>
-					<li>
-						<a href="{{site.root}}/code-style-guidelines-and-best-practices/">
-							<small>Lesson 9</small>
-							<span>Code Style Guidelines and Best Practices</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+					</header>
+					<nav  id="nav" class="navigation"  role="navigation">
+						<ul class="site-nav">
+							<a href="#inner-wrap"  class="close-btn"  id="nav-close-btn"  alt="Close Navigation">
+							<i class="icon-close"></i>
+							</a>
+							<li  class="site-nav__installation">
+								<a href="{{site.root}}/getting-started/">
+									<small>Lesson 1</small>
+									<span>Getting Sass Installed</span>
+								</a>
+							</li>
+							<li  class="site-nav__project-setup">
+								<a href="{{site.root}}/project-setup-and-basic-guidelines/">
+									<small>Lesson 2</small>
+									<span>Project Setup and Basic Guidelines</span>
+								</a>
+							</li>
+							<li class="site-nav__sass-basics">
+								<a href="{{site.root}}/sass-basics/">
+									<small>Lesson 3</small>
+									<span>Sass Basics</span>
+								</a>
+							</li>
+							<li  class="site-nav__simple-functions">
+								<a href="{{site.root}}/simple-functions-and-math/">
+									<small>Lesson 4</small>
+									<span>Simple Functions and Math</span>
+								</a>
+							</li>
+							<li  class="site-nav__mixins">
+								<a href="{{site.root}}/simplify-your-life-with-mixins/">
+									<small>Lesson 5</small>								
+									<span>Simplify your life with @mixins</span>
+								</a>
+							</li>
+							<li  class="site-nav__extends">
+								<a href="{{site.root}}/reusable-code-with-extends">
+									<small>Lesson 6</small>
+									<span>Reusable code with @extends</span>
+								</a>
+							</li>
+							<li  class="site-nav__custom-functions">
+								<a href="{{site.root}}/creating-custom-functions/">
+									<small>Lesson 7</small>
+									<span>Creating Custom Functions</span>
+								</a>
+							</li>
+							<li  class="site-nav__performance">
+								<a href="{{site.root}}/code-performance/">
+									<small>Lesson 8</small>
+									<span>Code Performance</span>
+								</a>
+							</li>
+							<li  class="site-nav__code-guidelines">
+								<a href="{{site.root}}/code-style-guidelines-and-best-practices/">
+									<small>Lesson 9</small>
+									<span>Code Style Guidelines and Best Practices</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
 
-		<div class="site-main">
-			<article class="content">
-				{{ content }}
-			</article>
-		</div>
-
+					<div class="site-main">
+						<article class="content">
+							{{ content }}
+						</article>
+					</div>
+					
+				</div>
+			</div>
 		<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-        <!--<script src="{{ site.url }}main.js"></script>-->
+        <script src="{{ site.url }}/assets/scripts/main.js"></script>-
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
