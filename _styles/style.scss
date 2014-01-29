@@ -1,11 +1,18 @@
+/*------------------------------------*\
+    $STYLE
+\*------------------------------------*/
+
 @import 'vars';
 
 @import 'brackets.css/brackets';
 
+@import 'ui/fonts';
 @import 'ui/page';
 @import 'ui/site-nav';
+@import 'ui/site-header';
 @import 'ui/code';
 @import 'ui/fonts';
+@import 'ui/site-header';
 
 @import 'ui/js-classes';
 @import 'ui/helpers';

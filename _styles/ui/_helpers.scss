@@ -1,3 +1,34 @@
+/*------------------------------------*\
+    $HELPERS
+\*------------------------------------*/
+.overflow-hidden, %overflow-hidden{
+	overflow: hidden;
+}
+
+.position--relative, %position--relative{
+	position: relative;
+}
+
+.position--fixed, %position--fixed{
+	position: fixed;
+}
+
+.position--absolute, %position--absolute{
+	position: absolute;
+}
+
+.hide-desk{
+	@include mq(720px) {
+		display: none;
+	}
+}
+
+.hide-portable{
+	@include mq(719px, max) {
+		display: none !important;
+	}
+}
+
 /**
  * Font weights
  */
