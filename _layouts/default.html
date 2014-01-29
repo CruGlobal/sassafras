@@ -25,7 +25,9 @@
 			<div  id="outer-wrap" class="outer-wrap">
 				<div  id="inner-wrap" class="inner-wrap">
 					<header class="page-header" role="banner">
-						<h1 class="site-brand"></h1>
+						<h1 class="site-brand  hide-desk">
+							<a href="/">Some Cool Logo <span>(Cough Cough... Terry)</span></a>
+						</h1>
 						<a class="open-btn" id="nav-open-btn" href="#nav" alt="Open Navigation">
 							<i class="icon-nav"></i>
 						</a>
@@ -35,6 +37,10 @@
 							<a href="#inner-wrap"  class="close-btn"  id="nav-close-btn"  alt="Close Navigation">
 							<i class="icon-close"></i>
 							</a>
+							<h1 class="site-brand  hide-portable">
+								<a href="/">Some Sweet Logo <span>(Cough Cough... Terry)</span>
+								</a>
+							</h1>
 							<li  class="site-nav__installation">
 								<a href="{{site.root}}/getting-started/">
 									<small>Lesson 1</small>
@@ -47,12 +53,14 @@
 									<span>Project Setup and Basic Guidelines</span>
 								</a>
 							</li>
+
 							<li class="site-nav__sass-basics">
 								<a href="{{site.root}}/sass-basics/">
 									<small>Lesson 3</small>
 									<span>Sass Basics</span>
 								</a>
 							</li>
+
 							<li  class="site-nav__simple-functions">
 								<a href="{{site.root}}/simple-functions-and-math/">
 									<small>Lesson 4</small>
@@ -71,18 +79,21 @@
 									<span>Reusable code with @extends</span>
 								</a>
 							</li>
+
 							<li  class="site-nav__custom-functions">
 								<a href="{{site.root}}/creating-custom-functions/">
 									<small>Lesson 7</small>
 									<span>Creating Custom Functions</span>
 								</a>
 							</li>
+
 							<li  class="site-nav__performance">
 								<a href="{{site.root}}/code-performance/">
 									<small>Lesson 8</small>
 									<span>Code Performance</span>
 								</a>
 							</li>
+
 							<li  class="site-nav__code-guidelines">
 								<a href="{{site.root}}/code-style-guidelines-and-best-practices/">
 									<small>Lesson 9</small>
@@ -91,6 +102,7 @@
 							</li>
 						</ul>
 					</nav>
+
 
 					<div class="site-main">
 						<article class="content">
@@ -101,7 +113,7 @@
 				</div>
 			</div>
 		<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-        <script src="{{ site.url }}/assets/scripts/main.js"></script>-
+        <script src="{{site.root}}/assets/scripts/main.js"></script>-
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
