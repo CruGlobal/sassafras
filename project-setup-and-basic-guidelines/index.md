@@ -8,7 +8,7 @@ page-class: page--project-setup
 </header>
 <section class="section__block">
 <div class="section__content">
-<h2  class="section__title">Project Structure</h3>
+<h2  class="section__title">Project Structure</h2>
 <p>The first thing to understand is that <code>.scss</code> is essentially a subset to the CSS3 syntac. This means that every valid CSS3 stylesheet is a valid <code>.scss</code> as well. These means that you can switch to <code>.scss</code> immediately once you have completed the installation. However, unlike vanilla CSS, Sass is a real scripting language with expressions, functions, variables, conditional logic, and loops. You don’t have to use all of these features to get some benefit out of Sass, but they’re there if you need them. Later we will get into how they will make complex and repetitive CSS much easier to write. </p>
 		
 <p>Here is a simple example of an overall project setup: </p>

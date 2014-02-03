@@ -1,7 +1,7 @@
 name: Sassafras
 
-#root: http://0.0.0.0:4000
-root: http://cruweb.github.io/sassafras
+root: http://0.0.0.0:4000
+#root: http://cruweb.github.io/sassafras
 
 markdown: redcarpet
 pygments: true

@@ -81,6 +81,7 @@ ul, ol, dd{
 
 dl > dd{
 	@include mq(740px, max)  {
+
 		margin-left:  0;
 		
 	}
@@ -89,3 +90,5 @@ dl > dd{
 .close-btn{
 	display: block;
 }
+
+blockquote{}
