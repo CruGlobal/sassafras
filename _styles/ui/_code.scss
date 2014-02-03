@@ -20,8 +20,16 @@ pre{
 	}
 }
 
-code{
+p code{
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	
 	color: #c6538c;
+	
+	@include rem(padding-top, 1px);
+	@include rem(padding-bottom, 1px);
+	@include rem(padding-left, 3px);
+	@include rem(padding-right, 3px);
 }
 
 .cm{

@@ -118,9 +118,66 @@ a:hover{
 <p>This technique can be used frequently to reduce the size of you code but this is a little more advanced. </p>
 </div>
 
+<div class="section__content">
+<h2 class="section__title">Variables</h2>
+<p>Variables in CSS are a breakthrough in modern web development. With Sass you can create variables for things such as fonts, colors, margins, padding, and pretty much anything else you can think of. If you are familiar with PHP or JavaScript the concept is fairly transferable. </p>
+
+<p>The best thing about variables is that they allow you to use an element more than ones, similar to a class in HTML. This will allow for much less copy and pasting and a more productive workflow.You can do many powerful things with variables, but for now we will deal with the basics.</p>
+
+<p>For example, the following `.scss`:</p>
+
+{% highlight scss %}
+/**
+ * Let's define some variables
+ */
+	$base-font-size:    16px;
+	$base-line-height:  24px; 
+	$base-ui-color:     #C0FFEE;
+
+	$base-spacing-unit: $base-line-height;
+
+/**
+ * And apply them:
+ */
+.html{
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	color: $base-ui-color;
+}
+
+.container{
+	padding-left: $base-spacing-unit;
+	padding-right: $base-spacing-unit;
+}
+{% endhighlight %}
+
+
+<p>will output to this <code>.css</code>:</p>
+
+{% highlight scss %}
+.html {
+    font-size: 16px;
+    line-height: 24px;
+    color: #c0ffee;
+}
+
+.container {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+{% endhighlight %}
+
+<p> This is mearly scrathing the surface of what variables can do. In the next lesson we will get into more advanced techniques and time saving applications.</p>
+</div>
 
 <div  class="section__content">
 <h2  class="section__title">Methodology</h2>
+<h3>Variable Placement</h3>
+<p>Variable should, under most circumstances, be placed in a separate file just for variables and project settings. This makes it much easier to find a specific one in the future. This will typically be in a file with a naming converniton like: <code>_defaults.scss</code>, <code>_vars.scss</code>, or <code>_settings.scss</code>.  There may be a few reasons to place the variables within a certain file, but these are rare.</p>
+
+<p>Under no circumstances should variables be placed within a css ruleset. This, by appearance, limits that variable to this ruleset. For the sake of keeping the code dry and readable place variable declarations at the top of your stylesheet and try to keep the naming as transferable as possible.</p>
+
+
 <h3>More on Code Structure</h3>
 <p>As talked about in the previous lesson we will be following a specific style when ordering our rules. We will continue adding on to these rules as we introduce new features. </p>
 
@@ -141,6 +198,7 @@ a:hover{
 <p>Nothing goes after the nested stuff. And the same order previously stated will apply withing the nested selectors</p>
 	
 <h4>Maximum Nesting: Three Levels Deep</h4>
+
 {% highlight scss %}
 .weather {
     .cities{
@@ -150,9 +208,10 @@ a:hover{
 	}
 }
 {% endhighlight %}
+
 <p>I could go on and on about this but I will let Chris Coyier explain things:</p>
-<blockquote class="island">
-	<p>I could go on and on about this but I will let Chris Coyier explain things:"Chances are, if you're deeper than that, you're writing a crappy selector. Crappy in that it's too reliant on HTML structure (fragile), overly specific (too powerful), and not very reusable (not useful). It's also on the edge of being difficult to understand.</p>
+<blockquote>
+	<p>Chances are, if you're deeper than that, you're writing a crappy selector. Crappy in that it's too reliant on HTML structure (fragile), overly specific (too powerful), and not very reusable (not useful). It's also on the edge of being difficult to understand.</p>
 </blockquote>
 
 <h4>Maximum Nesting: 50 Lines</h4>
@@ -161,5 +220,6 @@ a:hover{
 
 
 </div>
+	
 
 </section>
