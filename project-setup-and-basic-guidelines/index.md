@@ -57,8 +57,8 @@ styles/
 |   |-- _page-header.scss  # Etc...
 |   ...
 |
-`-- _vars.scss             # project specific variables
-`-- main.scss              # primary Sass file
+|-- _vars.scss             # project specific variables
+|-- main.scss              # primary Sass file
 {% endhighlight %}	
 
 
