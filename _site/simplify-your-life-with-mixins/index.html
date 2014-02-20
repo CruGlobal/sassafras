@@ -9,11 +9,13 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
-        <link rel="stylesheet" href="http://cruweb.github.io/sassafras/assets/styles/style.min.css">
-
-
-        <script src="http://cruweb.github.io/sassafras/assets/scripts/vendor/modernizr.min.js"></script>
+		<!-- Prefetch DNS for external assets -->
+		<link rel="dns-prefetch" href="//fonts.googleapis.com">
+		
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="http://cruweb.github.io/sassafras/assets/styles/style.min.css">
+		
+		 <script src="http://cruweb.github.io/sassafras/assets/scripts/vendor/modernizr.min.js"></script>
     </head>
     <body  class="page page--mixins">
 		<div class="preload">
@@ -26,7 +28,7 @@
 				<div  id="inner-wrap" class="inner-wrap">
 					<header class="page-header" role="banner">
 						<h1 class="site-brand  hide-desk">
-							<a href="/">Some Cool Logo <span>(Cough Cough... Terry)</span></a>
+							<a href="http://cruweb.github.io/sassafras/">Some Cool Logo <span>(Cough Cough... Terry)</span></a>
 						</h1>
 						<a class="open-btn" id="nav-open-btn" href="#nav" alt="Open Navigation">
 							<i class="icon-nav"></i>
@@ -109,6 +111,174 @@
 							<p><header class="page__header">
     <h1  class="page__title">Simplify Your Life with Mixins</h2>
 </header></p>
+
+<p><section class="section__block">
+<div class="section__content">
+<h2 class="section__title">Mixins</h2>
+<p>Of all of the Sass features, Mixins have to be the most helpful and most powerful. Mixins are akin to variables, if you pumped them full of steroids. You can define a complete style of an element, complete intensive calculations, and much more while having the ability to use them across your project.</p></p>
+
+<p>Mixins are defined with the <code>@mixin</code> directive, which takes in a block of styles. You then apply this to a selectore by using the <code>@include</code> directive. </p>
+
+<p>Lets start by creating a mixin that will center elements within ther parent. This does require that a <code>width</code> or <code>max-width</code> be set.</p>
+
+<div class="highlight"><pre><code class="scss"><span class="k">@mixin</span><span class="nf"> center-block</span> <span class="p">{</span>
+    <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
+    <span class="na">margin-left</span><span class="o">:</span> <span class="no">auto</span><span class="p">;</span>
+    <span class="na">margin-right</span><span class="o">:</span> <span class="no">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Usage in <code>.scss</code></p>
+
+<div class="highlight"><pre><code class="scss"><span class="nc">.footer-wrap</span> <span class="p">{</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">450</span><span class="kt">px</span><span class="p">;</span>
+    
+    <span class="k">@include</span><span class="nd"> center-block</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Output in <code>.css</code></p>
+
+<div class="highlight"><pre><code class="scss"><span class="nc">.footer-wrap</span> <span class="p">{</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">450</span><span class="kt">px</span><span class="p">;</span>
+    <span class="na">display</span><span class="o">:</span> <span class="no">block</span><span class="p">;</span>
+    <span class="na">margin-left</span><span class="o">:</span> <span class="no">auto</span><span class="p">;</span>
+    <span class="na">margin-right</span><span class="o">:</span> <span class="no">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Lets try something a little more complecated. This time we will be making a mixin that will Create vendor-prefixed CSS that are needed for some CSS3 declarations in one go.</p>
+
+
+
+<div class="highlight"><pre><code class="scss"><span class="k">@mixin</span><span class="nf"> vendor</span><span class="p">(</span><span class="nv">$property</span><span class="o">,</span> <span class="nv">$value</span><span class="o">...</span><span class="p">){</span>
+    <span class="nt">-webkit-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span><span class="err">$</span><span class="nt">value</span><span class="o">;</span>
+       <span class="nt">-moz-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span><span class="err">$</span><span class="nt">value</span><span class="o">;</span>
+        <span class="nt">-ms-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span><span class="err">$</span><span class="nt">value</span><span class="o">;</span>
+         <span class="nt">-o-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span><span class="err">$</span><span class="nt">value</span><span class="o">;</span>
+            <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span><span class="err">$</span><span class="nt">value</span><span class="o">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Usage:</p>
+
+<div class="highlight"><pre><code class="scss"><span class="nc">.button</span><span class="p">{</span>
+    <span class="na">background-color</span><span class="o">:</span> <span class="mh">#cccccc</span><span class="p">;</span>
+    
+    <span class="k">@include</span><span class="nd"> vendor</span><span class="p">(</span><span class="no">border</span><span class="o">-</span><span class="n">radius</span><span class="o">,</span> <span class="mi">4</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Output:</p>
+
+
+<div class="highlight"><pre><code class="scss"><span class="nc">.button</span> <span class="p">{</span>
+    <span class="na">background-color</span><span class="o">:</span> <span class="mh">#cccccc</span><span class="p">;</span>
+    <span class="na">-webkit-border-radius</span><span class="o">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+    <span class="na">-moz-border-radius</span><span class="o">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+    <span class="na">-ms-border-radius</span><span class="o">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+    <span class="na">-o-border-radius</span><span class="o">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+    <span class="na">border-radius</span><span class="o">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>In this example, you will see that we wraped the <code>$property</code> variable with a <code>#{}</code>. This needs to be used whenever you want to use variables along with plain CSS in a mixin.</p>
+
+<p>We will finish up with two of my favorite mixins:</p>
+
+
+
+<div class="highlight"><pre><code class="scss"><span class="cm">/**</span>
+<span class="cm"> * Quickly generate a font-size in rems, with a pixel fallback, based on the</span>
+<span class="cm"> * value we pass into the mixin:</span>
+<span class="cm"> */</span>
+<span class="k">@mixin</span><span class="nf"> font-size</span><span class="p">(</span><span class="nv">$font-size</span><span class="o">,</span> <span class="nv">$line-height</span><span class="o">:</span> <span class="n-Pseudo">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="na">font-size</span><span class="o">:</span> <span class="nv">$font-size</span><span class="p">;</span>
+    <span class="na">font-size</span><span class="o">:</span> <span class="p">(</span><span class="nv">$font-size</span> <span class="o">/</span> <span class="nv">$base-font-size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+
+    <span class="k">@if</span> <span class="nv">$line-height</span> <span class="o">==</span> <span class="n-Pseudo">true</span> <span class="p">{</span>
+        <span class="na">line-height</span><span class="o">:</span> <span class="nf">ceil</span><span class="p">(</span><span class="nv">$font-size</span> <span class="o">/</span> <span class="nv">$base-line-height</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nv">$base-line-height</span> <span class="o">/</span> <span class="nv">$font-size</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Set a rem size and pixel fallback to any property of your choosing, based </span>
+<span class="cm"> * on the inputed values</span>
+<span class="cm"> */</span>
+<span class="k">@mixin</span><span class="nf"> rem-calc</span><span class="p">(</span><span class="nv">$property</span><span class="o">,</span> <span class="nv">$size-value</span><span class="p">){</span>
+    <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span> <span class="err">$</span><span class="nt">size-value</span><span class="o">;</span>
+    <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">property</span><span class="p">}</span><span class="nd">:</span> <span class="o">(</span><span class="err">$</span><span class="nt">size-value</span> <span class="o">/</span> <span class="err">$</span><span class="nt">base-font-size</span><span class="o">)</span> <span class="o">*</span> <span class="nt">1rem</span><span class="o">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+<p>Usage: </p>
+
+<div class="highlight"><pre><code class="scss"><span class="nt">h1</span><span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="mh">#333333</span><span class="p">;</span>
+    
+    <span class="k">@include</span><span class="nd"> font-size</span><span class="p">(</span><span class="mi">48</span><span class="kt">px</span><span class="p">);</span>
+    <span class="k">@include</span><span class="nd"> rem-calc</span><span class="p">(</span><span class="no">padding-top</span><span class="o">,</span> <span class="mi">24</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+<p>Output: </p>
+
+<div class="highlight"><pre><code class="scss"><span class="nt">h1</span> <span class="p">{</span>
+  <span class="na">color</span><span class="o">:</span> <span class="mh">#333333</span><span class="p">;</span>
+  <span class="na">font-size</span><span class="o">:</span> <span class="mi">48</span><span class="kt">px</span><span class="p">;</span>
+  <span class="na">font-size</span><span class="o">:</span> <span class="mi">3</span><span class="kt">rem</span><span class="p">;</span>
+  <span class="na">line-height</span><span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="na">padding-top</span><span class="o">:</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+  <span class="na">padding-top</span><span class="o">:</span> <span class="mi">1</span><span class="mf">.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+
+<div class="section__content">
+<h2 class="section__title">Methodology</h2>
+<h3>More on Code Structure</h3>
+<p>We are continuing in the process of defining our structure for writing our code.</p>
+<p><code>@includes</code> should follow our regular styles but appear before nested selectors. This allows for greater readibility since they will all be grouped together at the bottom.</p>
+
+<h4>Nested Selectors Last</h4>
+    
+<div class="highlight"><pre><code class="scss"> <span class="nc">.weather</span> <span class="p">{</span>
+      <span class="na">background</span><span class="o">:</span> <span class="mh">#f7f7f7</span><span class="p">;</span>
+      
+      <span class="k">@include</span><span class="nd"> rem-calc</span><span class="p">(</span><span class="no">padding-left</span><span class="o">,</span> <span class="mi">24</span><span class="kt">px</span><span class="p">);</span>
+      <span class="k">@include</span><span class="nd"> rem-calc</span><span class="p">(</span><span class="no">padding-right</span><span class="o">,</span> <span class="mi">24</span><span class="kt">px</span><span class="p">);</span>
+      
+      <span class="o">&gt;</span> <span class="nt">h3</span> <span class="p">{</span>
+        <span class="na">border-bottom</span><span class="o">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="no">solid</span> <span class="nb">white</span><span class="p">;</span>
+        
+        <span class="k">@include</span><span class="nd"> font-size</span><span class="p">(</span><span class="mi">30</span><span class="kt">px</span><span class="p">);</span>
+      <span class="p">}</span>
+      
+    <span class="p">}</span>
+    
+</code></pre></div>
+
+    
+
+
+</div>
+
+<p></section></p>
 
 						</article>
 					</div>

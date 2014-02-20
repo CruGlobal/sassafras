@@ -1,3 +1,7 @@
+html{
+	font-weight: $base-font-weight;
+}
+
 .preload{
 	display: none !important;
 }
@@ -88,4 +92,14 @@ dl > dd{
 
 .close-btn{
 	display: block;
+}
+
+
+blockquote{
+	border-left: 8px solid #d9d9d9;
+	color: #999;
+	
+	@include mq(680px) {
+		margin-left: -20px;
+	}
 }

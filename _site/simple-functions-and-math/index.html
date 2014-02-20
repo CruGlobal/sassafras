@@ -9,11 +9,13 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
-        <link rel="stylesheet" href="http://cruweb.github.io/sassafras/assets/styles/style.min.css">
-
-
-        <script src="http://cruweb.github.io/sassafras/assets/scripts/vendor/modernizr.min.js"></script>
+		<!-- Prefetch DNS for external assets -->
+		<link rel="dns-prefetch" href="//fonts.googleapis.com">
+		
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="http://cruweb.github.io/sassafras/assets/styles/style.min.css">
+		
+		 <script src="http://cruweb.github.io/sassafras/assets/scripts/vendor/modernizr.min.js"></script>
     </head>
     <body  class="page page--simple-functions">
 		<div class="preload">
@@ -26,7 +28,7 @@
 				<div  id="inner-wrap" class="inner-wrap">
 					<header class="page-header" role="banner">
 						<h1 class="site-brand  hide-desk">
-							<a href="/">Some Cool Logo <span>(Cough Cough... Terry)</span></a>
+							<a href="http://cruweb.github.io/sassafras/">Some Cool Logo <span>(Cough Cough... Terry)</span></a>
 						</h1>
 						<a class="open-btn" id="nav-open-btn" href="#nav" alt="Open Navigation">
 							<i class="icon-nav"></i>
@@ -109,6 +111,74 @@
 							<p><header class="page__header">
     <h1  class="page__title">Simple Functions and Math</h2>
 </header></p>
+
+<p><section  class="section__block"></p>
+
+<div class="section__content">
+<h2 class="section__title">Built in Sass Functions</h2>
+
+<p>Sass has a number of built in functions that will make our lives much easier. These can range from conversion of rgba colors to converting a unitless number to a percentage. We will only be covering the basics of functions and how to format them. For a full list of the built in functions visit the <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html">Sass documentation</a>.</p>
+
+<p>Using functions is a simple process as shown below. </p>
+
+
+<div class="highlight"><pre><code class="scss"><span class="nv">$base-ui-color</span><span class="o">:</span> <span class="mh">#cccccc</span><span class="p">;</span>
+
+<span class="nt">a</span><span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="nf">darken</span><span class="p">(</span><span class="nv">$base-ui-color</span><span class="o">,</span> <span class="mi">20</span><span class="kt">%</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>The <code>.css</code> output</p>
+
+
+<div class="highlight"><pre><code class="scss"><span class="nt">a</span> <span class="p">{</span>
+  <span class="na">color</span><span class="o">:</span> <span class="mh">#999999</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>This allows your code to become more dynamic than ever. For example if you chose to change the base color for your website all you need to do is change the variable and Sass will handle the conversions for you. </p>
+
+<p>You also have the abillity to create your own functions which can, for example, convert pixel units to rem or em values. We will get into those a little later.</p>
+
+
+</div>
+
+<div class="section__content">
+<h2 class="section__title">Operations and Math</h2>
+<p>It was mentioned before that we can do some powerful things with variables. We were able to get a better view of this with functions but when we start implementing some operations we truely see how powerful they become.  We have the ability to plug in any numbers we wish but you will find that when used with variables, the abiliity to perform operations becomes very useful.  If set up correctly, changing one variable can result in an entirely different grid system or typography layout. </p>
+
+<p>Here is a simple <code>.scss</code> file:</p>
+
+
+<div class="highlight"><pre><code class="scss"><span class="nv">$base-spacing-unit</span><span class="o">:</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+
+<span class="nv">$gutter</span><span class="o">:</span> <span class="nv">$base-spacing-unit</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="nc">.column</span><span class="p">{</span>
+  <span class="na">padding-left</span><span class="o">:</span> <span class="nv">$gutter</span><span class="p">;</span>
+  <span class="na">padding-left</span><span class="o">:</span> <span class="nv">$gutter</span> <span class="o">/</span> <span class="mi">16</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>And the <code>.css</code> output:</p>
+
+
+<div class="highlight"><pre><code class="scss"><span class="nc">.column</span> <span class="p">{</span>
+  <span class="na">padding-left</span><span class="o">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+  <span class="na">padding-left</span><span class="o">:</span> <span class="mi">0</span><span class="mf">.75</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>As you can see by altering one variable, we can changing the spacing of our girds and therefore, our entire horizontal layout.  As stated this was a very simple example of the types of math we can begin to do, as you will begin to see in future lessons. </p>
+
+</div>
+
+<p></section></p>
 
 						</article>
 					</div>
