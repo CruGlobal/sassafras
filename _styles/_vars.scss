@@ -1,7 +1,12 @@
 $logo-path: "http://www.reactiongifs.com/wp-content/uploads/2012/12/gimme-five.gif";
 $base-font-family: 'Ubuntu', sans-serif;
-$base-font-weight: 400;
+$base-font-weight: 300;
 
 
 $header-font-family: 'Ubuntu', sans-serif;
-$header-font-weight: 500;
+$header-font-weight: 300;
+
+
+.site-nav li:last-of-type{
+	margin-bottom: 40px;
+}
