@@ -209,7 +209,7 @@ a:hover{
 }
 {% endhighlight %}
 
-<p>I could go on and on about this but I will let Chris Coyier explain things:</p>
+<p>I could go on and on about this but I will let <a href="http://css-tricks.com/">Chris Coyier</a> explain things:</p>
 <blockquote>
 	<p>Chances are, if you're deeper than that, you're writing a crappy selector. Crappy in that it's too reliant on HTML structure (fragile), overly specific (too powerful), and not very reusable (not useful). It's also on the edge of being difficult to understand.</p>
 </blockquote>
